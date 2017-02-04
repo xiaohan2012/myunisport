@@ -1,0 +1,182 @@
+\documentclass[a0paper,25pt,margin=0pt,innermargin=10pt,table]{tikzposter} %Options for format can be included here
+
+\usepackage{graphicx}
+\usepackage{adjustbox}
+% \usepackage{color}
+\usepackage{xcolor}
+% \usepackage[\textwidth=300pt, \textheight=300pt]{geometry}
+
+\definecolor{numberbgcolor}{HTML}{D5E06E}
+\definecolor{numberfgcolor}{named}{white}
+\definecolor{namebgcolor}{HTML}{FDA921}
+\definecolor{namefgcolor}{named}{white}
+\definecolor{explanationfgcolor}{HTML}{6C6C6C}
+
+ % Title, Author, Institute
+\title{MY UNISPORT 2016}
+% \author{Author(s)}
+% \institute{Institute}
+% \titlegraphic{LogoGraphic Inserted Here}
+
+% Choose Layout
+\input{style}
+\input{defines}
+
+\usetheme{sample}
+
+
+
+\newcommand*{\titlefont}{\fontfamily{qag}\selectfont}
+
+\settitle{
+  \centering
+  \vbox{
+    \color{titlefgcolor} {
+      {\titlefont
+        \fontsize{96}{96}\selectfont
+        \fontseries{bx}\selectfont
+        \@title \par
+      }
+    }
+  }
+}
+
+
+\definecolor{colorfirst}{HTML}{C0DCEB}
+\definecolor{colorsecond}{HTML}{61A0CA}
+\definecolor{colorthird}{HTML}{C9E8AC}
+          
+\begin{document}
+
+\begin{adjustbox}{max height=0.5\textheight}
+ % Title block with title, author, logo, etc.
+\maketitle
+    \begin{columns}
+      
+      \newcommand{\headnumber}[1]{{
+          \cellcolor{numberbgcolor}
+          \fontsize{72}{72}\selectfont
+          \fontfamily{qag}\selectfont
+          \fontseries{bx}
+          \color{numberfgcolor}
+          #1  }}
+      \newcommand{\headname}[2]{{
+          \fontsize{72}{72}\selectfont
+          \fontfamily{qag}\selectfont
+          \fontseries{bx}
+          \color{#2}
+          #1  }}      
+
+      \newcommand{\explanation}[1]{{
+          \fontsize{36}{36}\selectfont
+          \fontfamily{qag}\selectfont
+          \color{explanationfgcolor}
+          #1  }}
+
+      % FIRST column
+      \column{0.5}% Width set relative to text width
+
+      \block{}{
+
+        {
+          \def\arraystretch{2.2}          
+          \setlength{\extrarowheight}{10pt}
+          \setlength{\arrayrulewidth}{1.2em}
+          
+          \begin{center}
+            \begin{tabular}{l r}
+              \headnumber{\totaltrainings} & \explanation{Total number of trainings this year} \\
+              \arrayrulecolor{white}\hline
+              \headnumber{\meandays} & \explanation{Average days between two trainings} \\
+              \arrayrulecolor{white}
+            \end{tabular}
+          \end{center}
+
+          \vspace{1em}
+
+          \begin{center}
+            \begin{tabular}{ l c}
+              \tikz\draw[/mystyle,gold,fill=gold] (0,0) circle (1cm);
+              &\headname{\coursenamea}{colorfirst} \\
+              
+              \arrayrulecolor{white}\hline
+              \tikz\draw[/mystyle,silver,fill=silver] (0,0) circle (1cm);
+               &\headname{\coursenameb}{colorsecond} \\
+              \arrayrulecolor{white}\hline
+              \tikz\draw[/mystyle,bronze,fill=bronze] (0,0) circle (1cm);
+               &\headname{\coursenamec}{colorthird} \\
+            \end{tabular}
+          \end{center}                    
+        }
+      }
+
+      % First column - second block
+      \block{}{
+        \begin{tikzfigure}
+          \centering
+          \includegraphics[width=0.9\linewidth]{imgs/stacked.png}
+        \end{tikzfigure}
+      }
+
+      % SECOND column
+      \column{0.5}
+      % Second column with first block's top edge aligned with with previous column's top.
+
+      % Second column - first block
+
+
+      % Second column - second block
+      \block[titlewidthscale=0.6, bodywidthscale=0.8]
+      {}{
+        \begin{tikzfigure}
+          \centering
+          \includegraphics{imgs/pie.png}
+        \end{tikzfigure}
+      }
+
+      \block[]{}{
+                \begin{center}
+          \def\arraystretch{1.5}
+          \begin{tabular}{cccc}
+            \tikz\draw[/mystyle,coursea,fill=coursea] (-5mm, -5mm) rectangle (5mm, 5mm); 
+            &  \explanation{\coursenamea}
+            & \tikz\draw[/mystyle,courseb,fill=courseb] (-5mm, -5mm) rectangle (5mm, 5mm); 
+            &  \explanation{\coursenameb}  \\
+            \tikz\draw[/mystyle,coursec,fill=coursec] (-5mm, -5mm) rectangle (5mm, 5mm); 
+            &  \explanation{\coursenamec}
+            & \tikz\draw[/mystyle,coursed,fill=coursed] (-5mm, -5mm) rectangle (5mm, 5mm); 
+            &  \explanation{\coursenamed}  \\
+            \tikz\draw[/mystyle,coursee,fill=coursee] (-5mm, -5mm) rectangle (5mm, 5mm); 
+            &  \explanation{\coursenamee}
+            & \tikz\draw[/mystyle,coursef,fill=coursef] (-5mm, -5mm) rectangle (5mm, 5mm); 
+            &  \explanation{\coursenamef}  \\
+            \tikz\draw[/mystyle,courseg,fill=courseg] (-5mm, -5mm) rectangle (5mm, 5mm); 
+            &  \explanation{\coursenameg}
+            & \tikz\draw[/mystyle,courseh,fill=courseh] (-5mm, -5mm) rectangle (5mm, 5mm); 
+            &  \explanation{\coursenameh}  \\
+            \tikz\draw[/mystyle,courseg,fill=coursei] (-5mm, -5mm) rectangle (5mm, 5mm); 
+            &  \explanation{\coursenamei}
+            & \tikz\draw[/mystyle,courseh,fill=coursej] (-5mm, -5mm) rectangle (5mm, 5mm);
+            &  \explanation{\coursenamej} \\              
+          \end{tabular}
+        \end{center}
+      }
+      \block[]{}{
+        \vspace{2em}
+        \begin{center}
+          \setlength{\arrayrulewidth}{2em}
+            \begin{tabular}{l r}
+              \headname{\mostactivemonth}{red} & \explanation{Most active month} \\
+              \arrayrulecolor{white}\hline
+              \headname{\mostinactivemonth}{blue} & \explanation{Most inactive month} \\
+            \end{tabular}
+          \end{center}
+      }
+
+    \end{columns}
+\end{adjustbox}
+\end{document}
+
+\endinput
+%%
+%% End of file `tikzposter-template.tex'.

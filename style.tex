@@ -1,0 +1,71 @@
+\definecolorpalette{sampleColorPalette} {
+  \definecolor{blue}{HTML}{4CC7F4}
+  \definecolor{pink}{HTML}{FCA2BC}
+  \definecolor{lightbg}{HTML}{EFEFEF}
+  \definecolor{colorThree}{named}{cyan}  
+}
+
+\definecolorstyle{sampleColorStyle} {
+  \definecolor{colorOne}{named}{blue}
+  \definecolor{colorTwo}{named}{yellow}
+  \definecolor{colorThree}{named}{orange}  
+}{
+  % Background Colors
+  \colorlet{backgroundcolor}{white}
+  \colorlet{framecolor}{white}
+  % Title Colors
+  \colorlet{titlefgcolor}{white}
+  \colorlet{titlebgcolor}{\titlebgcolor}
+  % Block Colors
+  \colorlet{blocktitlebgcolor}{white}
+  \colorlet{blocktitlefgcolor}{black}
+  \colorlet{blockbodybgcolor}{white}
+  \colorlet{blockbodyfgcolor}{black}
+  % Innerblock Colors
+  \colorlet{innerblocktitlebgcolor}{white}
+  \colorlet{innerblocktitlefgcolor}{black}
+  \colorlet{innerblockbodybgcolor}{white}
+  \colorlet{innerblockbodyfgcolor}{black}
+  % Note colors
+  \colorlet{notefgcolor}{black}
+  \colorlet{notebgcolor}{lightbg}
+  \colorlet{noteframecolor}{white}
+}
+
+
+\definelayouttheme{sample}{
+  \usecolorstyle[colorPalette=sampleColorPalette]{sampleColorStyle}
+  \usebackgroundstyle{sample}
+  \usetitlestyle{titlestyle}
+  \useblockstyle{sample}
+  \useinnerblockstyle{sample}
+  \usenotestyle{sample}  
+}
+
+
+\definebackgroundstyle{sample}{
+  \draw[inner sep=0pt, line width=0pt, color=red, fill=backgroundcolor]
+  (bottomleft) rectangle (topright);
+}
+
+
+\definetitlestyle{titlestyle}{
+  width=\textwidth, roundedcorners=0, linewidth=2pt, innersep=50pt,
+  titletotopverticalspace=20mm, titletoblockverticalspace=10mm  
+}{
+  \begin{scope}[line width=\titlelinewidth, rounded corners=\titleroundedcorners]
+    \draw[color=blocktitlebgcolor, fill=titlebgcolor]
+    (\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop);
+  \end{scope}  
+}
+
+
+
+\definenotestyle{sample}{
+  targetoffsetx=0pt, targetoffsety=0pt, angle=45, radius=8cm,
+  width=25cm, connection=true, rotate=0, roundedcorners=0, linewidth=1pt,
+  innersep=20pt   
+}{
+  \draw[draw=notebgcolor,fill=notebgcolor,rotate=\noterotate]
+  (notecenter.south west) rectangle (notecenter.north east);  
+}
