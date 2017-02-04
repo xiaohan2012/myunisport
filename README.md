@@ -6,7 +6,7 @@
 
 ### Generating statistis
 
-    >>> python main.py --username {} --password {} --school  {aalto|uh} --gender {male|female}
+    >>> python main.py --username {your univ username} --password {your univ passwd} --school  {aalto|uh} --gender {male|female}
 
 The output: 
 
