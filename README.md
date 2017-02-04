@@ -1,10 +1,11 @@
+
 # Infographics of your Unisport trianing records
 
 ## Example
 
 My 2016 Unisport training records:
 
-![](imgs/example.png)
+![](imgs/example.png =500x)
 
 ## Usage
 
