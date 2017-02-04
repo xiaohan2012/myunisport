@@ -5,7 +5,7 @@
 
 My 2016 Unisport training records:
 
-![](imgs/example.png =500x)
+![](imgs/example.png)
 
 ## Usage
 
