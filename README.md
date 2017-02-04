@@ -1,5 +1,11 @@
 # Infographics of your Unisport trianing records
 
+## Example
+
+My 2016 Unisport training records:
+
+![](imgs/example.png)
+
 ## Usage
 
 (This tools requires credentials of your university account)
