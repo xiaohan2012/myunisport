@@ -3,7 +3,7 @@
 
 ## Example
 
-My 2016 Unisport training records:
+An example summary report by this tool:
 
 ![](imgs/example.png)
 
